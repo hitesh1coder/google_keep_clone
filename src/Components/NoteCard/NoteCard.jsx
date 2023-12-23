@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./notecard.module.css";
 import deleteIcon from "../../assets/icons8-delete-30.png";
-import editIcon from "../../assets/icons8-edit-50.png";
+import editIcon from "../../assets/icons8-edit-48.png";
 
 const NoteCard = ({ note, deleteNote, editNote, saveNote, editing }) => {
   const [title, setTitle] = useState(note.title);
@@ -34,6 +34,7 @@ const NoteCard = ({ note, deleteNote, editNote, saveNote, editing }) => {
         <>
           <h3 className={styles.note_title}>{note.title}</h3>
           <p className={styles.note_content}>{note.content}</p>
+
           <img
             src={editIcon}
             alt="edit-icon"

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import styles from "./createnote.module.css";
 import NoteContext from "../../Context/NotesContext";
+import addIcon from "../../assets/icons8-add-30.png";
 
 const CreateNode = () => {
   const { notes, setNotes } = useContext(NoteContext);
@@ -17,32 +18,26 @@ const CreateNode = () => {
 
   const addNote = (e) => {
     e.preventDefault();
-    if (titleRef.current.value === "" || contentRef.current.value === "") {
+
+    const title = titleRef.current.value;
+    const content = contentRef.current.value;
+    const bgColor = bgColorRef.current.value;
+
+    if (title === "" || content === "") {
       setExpanded(false);
-      return alert("Please enter some tilte & content");
+      return alert("Please enter a title and content");
     }
 
-    setNotes([
-      ...notes,
-      {
-        id: new Date().toString(),
-        title: titleRef.current.value,
-        content: contentRef.current.value,
-        bgColor: bgColorRef.current.value,
-      },
-    ]);
-    localStorage.setItem(
-      "notes-keep",
-      JSON.stringify([
-        ...notes,
-        {
-          id: new Date().toString(),
-          title: titleRef.current.value,
-          content: contentRef.current.value,
-          bgColor: bgColorRef.current.value,
-        },
-      ])
-    );
+    const newNote = {
+      id: new Date().toString(),
+      title,
+      content,
+      bgColor,
+    };
+
+    setNotes([newNote, ...notes]);
+    localStorage.setItem("notes-keep", JSON.stringify([newNote, ...notes]));
+
     titleRef.current.value = "";
     contentRef.current.value = "";
     setExpanded(false);
@@ -82,7 +77,7 @@ const CreateNode = () => {
               />
             </label>
             <button type="submit" className={styles.btn}>
-              ➕
+              <img src={addIcon} alt="add-icon" />
             </button>
           </>
         )}

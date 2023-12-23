@@ -52,10 +52,15 @@
   cursor: pointer;
   border-radius: 50%;
 }
+.delete_icon {
+  right: 5px;
+}
 .edit_icon {
   right: 25px;
 }
 
-.delete_icon {
-  right: 5px;
+@media screen and (max-width: 600px) {
+  .note_card {
+    width: 80%;
+  }
 }

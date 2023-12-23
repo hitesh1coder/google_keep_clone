@@ -1,6 +1,9 @@
 .container {
-  min-height: 24vh;
-  margin: 1rem 0;
+  min-height: 20vh;
+  position: sticky;
+  background: #fff;
+  top: 4rem;
+  z-index: 5;
 }
 .container > form {
   display: flex;
@@ -36,7 +39,7 @@ textarea {
   border: none;
   width: 2rem;
   height: 2rem;
-  padding: 0.3rem;
+  padding: 0.1rem 0;
   position: absolute;
   right: 10px;
   bottom: -10px;
