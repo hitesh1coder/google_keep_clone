@@ -1,0 +1,47 @@
+.container {
+  min-height: 24vh;
+  margin: 1rem 0;
+}
+.container > form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 70%;
+  margin: 1rem auto;
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 7px rgb(128, 128, 128);
+}
+.container > form > input,
+textarea {
+  border: none;
+  outline: none;
+  padding: 6px 8px;
+}
+.container > form > label {
+  font-size: 0.9rem;
+}
+.container > form > .note_title {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.container > form > .content {
+  width: 100%;
+  font-size: 0.8rem;
+}
+.btn {
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.3rem;
+  position: absolute;
+  right: 10px;
+  bottom: -10px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  background: #fdd90d;
+}
